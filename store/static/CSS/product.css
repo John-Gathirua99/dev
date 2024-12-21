@@ -1,0 +1,113 @@
+/* Wrapper to center content */
+.card-container {
+    display: flex;               /* Use flexbox to center the card */
+    justify-content: center;     /* Center horizontally */
+    align-items: center;         /* Center vertically */
+    height: 100vh;               /* Full viewport height */
+    margin: 0;                   /* Remove any default margin */
+    background-color: #f0f0f0;   /* Light background color */
+}
+
+/* Styling for the Card */
+.card {
+    border-radius: 1rem;         /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    width: 90%;                   /* Default width (90% of container) */
+    max-width: 24rem;             /* Maximum width for large screens */
+}
+
+.card-img-top {
+    object-fit: cover;           /* Ensure the image fits within the given space */
+    height: 200px;               /* Fixed height for image */
+}
+
+.category {
+    font-size: 0.9rem;           /* Smaller font size for the category */
+    margin-bottom: 10px;
+}
+
+.card-title {
+    font-size: 1.25rem;          /* Larger font size for the product name */
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1rem;
+    margin-bottom: 15px;         /* Add space between description and price */
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.btn {
+    margin-top: 10px;
+}
+
+/* Responsive Design for Dynamic Scaling */
+@media (min-width: 768px) {
+    .card {
+        width: 75%;               /* Card width is 75% for medium-sized screens (tablets) */
+    }
+
+    .card-img-top {
+        height: 220px;            /* Slightly larger image on medium screens */
+    }
+
+    .card-title {
+        font-size: 1.5rem;        /* Increase font size for title */
+    }
+
+    .card-text {
+        font-size: 1.1rem;        /* Increase font size for description */
+    }
+
+    .price {
+        font-size: 1.3rem;        /* Larger price text */
+    }
+}
+
+@media (min-width: 992px) {
+    .card {
+        width: 60%;               /* Card width is 60% for large screens (desktops) */
+    }
+
+    .card-img-top {
+        height: 250px;            /* Larger image on desktop screens */
+    }
+
+    .card-title {
+        font-size: 1.75rem;       /* Larger title font size for desktops */
+    }
+
+    .card-text {
+        font-size: 1.2rem;        /* Larger description text */
+    }
+
+    .price {
+        font-size: 1.5rem;        /* Larger price text */
+    }
+}
+
+@media (min-width: 1200px) {
+    .card {
+        width: 50%;               /* Card width is 50% for extra-large screens */
+    }
+
+    .card-img-top {
+        height: 280px;            /* Even larger image for large screens */
+    }
+
+    .card-title {
+        font-size: 2rem;          /* Even larger font for the title */
+    }
+
+    .card-text {
+        font-size: 1.3rem;        /* Larger font for description */
+    }
+
+    .price {
+        font-size: 1.7rem;        /* Larger price font */
+    }
+}

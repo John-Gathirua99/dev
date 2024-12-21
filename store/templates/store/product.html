@@ -1,0 +1,79 @@
+
+
+
+
+{% extends 'store/base.html' %}
+{% load static %}
+{% block content %}
+<link href="{%static 'CSS/product.css'%}" rel="stylesheet" />
+<!-- Wrapper to center the card -->
+<div class="card-container">
+    <div class="card shadow-sm p-3 mb-5 bg-white rounded">
+        <!-- Product Image -->
+        <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+
+        <div class="card-body">
+            <!-- Product Category -->
+            <p class="category text-muted">{{ product.category }}</p>
+
+            <!-- Product Name -->
+            <h5 class="card-title">{{ product.name }}</h5>
+                <!-- {{product.id}} -->
+            <!-- Product Description -->
+            <p class="card-text">{{ product.description|truncatewords:20 }}</p> <!-- Limiting the description to 20 words -->
+
+            <!-- Product Price -->
+            <p class="price text-primary">Ksh{{ product.price }}</p>
+           <div class="row justify-content-center">
+                                <div class="col-md-2">Quantity:</div>
+                            <div class="col-md-2">
+                                <select class="form-select form-select-sm" aria-label="Default select example" id="qty-cart"> 
+                                                                  
+                                <option value="1" >1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                              </select>
+                            </div>
+            </div>
+
+            <!-- Go back button -->
+            <a href="{% url 'home' %}" class="btn btn-primary">Go back</a>
+            <button class="btn btn-secondary" type="button" value="{{product.id}}" id="add-cart">Add to cart</button>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).on('click','#add-cart',function(e){
+        e.preventDefault()
+        $.ajax({
+            type:"POST",
+            url:"{%url 'cart_add2'%}",
+            data:{
+                product_id:$('#add-cart').val(),
+                product_qty:$('#qty-cart option:selected').text(),
+                
+                csrfmiddlewaretoken:'{{csrf_token}}',
+                action:'post',
+            },
+            success:function(items){
+                console.log(items);
+                document.getElementById('cart_quantity').textContent=items.quantity
+                
+            },
+            error:function(xhr,errmsg,err){
+
+            }
+            
+        })
+    })
+</script>
+{% endblock %}
+
+
+

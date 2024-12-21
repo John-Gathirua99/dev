@@ -1,0 +1,174 @@
+
+{%extends 'store/base.html'%}
+{%load static%}
+
+        <!-- Section-->
+        {%block content%}
+    <title>About Us</title>
+    <!-- Bootstrap 5 CSS for styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+   
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .hero-section {
+            background: #007bff;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #343a40;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .team-member {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .contact-section {
+            background-color: #ffffff;
+            padding: 60px 0;
+        }
+
+        .contact-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #007bff;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        }
+
+        .contact-info div {
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info div h3 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .contact-info div p {
+            font-size: 1.1rem;
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>Welcome to Our About Page</h1>
+            <p>Learn more about our journey and our team!</p>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="container py-5">
+        <h2 class="section-title">Our Mission</h2>
+        <p class="text-center">We strive to deliver exceptional products and services that make a positive impact on the world. Our team is committed to innovation and customer satisfaction.</p>
+    </section>
+
+    <!-- Team Section -->
+    <section class="container py-5">
+        <h2 class="section-title">Meet Our Team</h2>
+        <div class="row">
+            <div class="col-md-4 team-member">
+                <div class="card p-3">
+                    <img src="{%static 'images/sam.jpg'%}" alt="Team Member 1">
+                    <h4>John Gathirua Mwangi</h4>
+                    <p>CEO & Founder</p>
+                </div>
+            </div>
+            <div class="col-md-4 team-member">
+                <div class="card p-3">
+                    <img src="{%static 'images/fru4.jpg'%}" alt="Team Member 2">
+                    <h4>Jane Smith</h4>
+                    <p>Lead Developer</p>
+                </div>
+            </div>
+            <div class="col-md-4 team-member">
+                <div class="card p-3">
+                    <img src="{%static 'images/fru3.jpg'%}" alt="Team Member 3">
+                    <h4>Emily Johnson</h4>
+                    <p>Marketing Manager</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <div>
+                    <h3>346</h3>
+                    <p>Ecommerce Nairobo, Kenya</p>
+                </div>
+                <div>
+                    <h3>Email</h3>
+                    <p>johngathirua@gmail.com</p>
+                </div>
+                <div>
+                    <h3>Phone</h3>
+                    <p>+254724444322</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 Our Company. All rights reserved.</p>
+    </footer>
+
+    <!-- Optional: Bootstrap JS (for some interactive components) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+{%endblock%}
